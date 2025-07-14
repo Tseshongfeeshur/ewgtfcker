@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>文档</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>文档</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <a href="#overview"><li>概述</li></a>
+                <a href="#preparation"><li>准备</li></a>
+                <a href="#installation"><li>安装</li></a>
+                <a href="#usage"><li>使用</li></a>
+                <a href="#uninstall"><li>卸载</li></a>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="overview">
+                <h2>概述</h2>
+                <p>
+                    “去你大爷的升学 e 网通”是一个<strong>用于“升学 e 网通”课程网站</strong>的<strong>半自动</strong>刷课脚本。它可以实现针对单系列课程的半自动刷课。
+                </p>
+                <p>
+                    也就是说，脚本可以完成的工作包括：
+                <ul>
+                    <li>以“天”或“科目”为系列刷课；</li>
+                    <li>自动开启 2 倍速；</li>
+                    <li><strong>自动点击课程中的随机“检测点”</strong>；</li>
+                    <li>某一课程完成后跳转至当日下一节课；</li>
+                    <li>刷完当天 / 当科目课程后弹窗提醒。</li>
+                </ul>
+                </p>
+                <p>
+                    脚本不能完成的工作包括：
+                <ul>
+                    <li>过高的倍速等级；</li>
+                    <li>全自动听完假期所有课程；</li>
+                    <li>帮您完成除课程之外的其他假期作业；</li>
+                    <li>带您去吃肯德基的“疯狂星期四”优惠套餐（虽然这个要求看起来很合理，但是抱歉真的不行）。</li>
+                </ul>
+                </p>
+                <p>
+                    此文档将会向您介绍“去你大爷的升学 e 网通”刷课脚本的使用方法。若您<strong>准确无误地</strong>跟随本文档操作，您应可以在之后的日子中舒适地刷课。
+                </p>
+                <hr>
+            </section>
+
+            <section id="preparation">
+                <h2>准备</h2>
+                <p>
+                    要使用该脚本快速刷课，您需要拥有：
+                <ul>
+                    <li>大脑</li>
+                    <li>电脑</li>
+                    <li>使用搜索引擎的基本技能</li>
+                    <li><strong>支持扩展的</strong>现代浏览器</li>
+                </ul>
+                </p>
+                <p>
+                    请<strong>确保您拥有以上物品</strong>，然后开始接下来的操作。
+                </p>
+                <hr>
+            </section>
+
+            <section id="installation">
+                <h2>安装</h2>
+                <h3>打开正确的浏览器</h3>
+                <p>
+                    该脚本通过<strong>注入升学 e 网通网页</strong>实现半自动刷课。因此，您需要使用一个<strong>支持扩展的现代浏览器</strong>来刷课。本文档使用
+                    <strong>Microsoft Edge</strong> 为例演示。
+                </p>
+                <ol>
+                    <li>
+                        <p>
+                            双击桌面上的该图标以启动 Microsoft Edge。若您找不到该图标，请善用搜索引擎。
+                        </p>
+                        <img src="img/edge.png" alt="Microsoft Edge">
+                    </li>
+                </ol>
+                <h3>安装用户脚本管理器</h3>
+                <p>
+                    “去你大爷的升学 e
+                    网通”刷课脚本是一个<strong>浏览器用户脚本</strong>。要使用此类脚本，您需要安装一个<strong>用户脚本管理器</strong>。本文档使用<strong>篡改猴</strong>为例演示。
+                </p>
+                <ol>
+                    <li>
+                        <p>
+                            <a href="https://microsoftedge.microsoft.com/addons/detail/%E7%AF%A1%E6%94%B9%E7%8C%B4/iikmkjmpaadaobahmlepeloendndfphd"
+                                target="_blank">单击此处</a>，在弹出的新窗口中单击右侧的“<strong>获取</strong>”按钮。此后按钮字样应立即变成“正在检查…”。
+                        </p>
+                        <img src="img/get-button.png" alt="“获取”按钮">
+                        <p>
+                            紧接着，您的 Microsoft Edge 应弹出询问窗口。
+                        </p>
+                        <img src="img/alert.png" alt="询问窗口">
+                    </li>
+                    <li>
+                        <p>
+                            单击“<strong>添加扩展</strong>”。稍候片刻，您将会看到这样的提示框。这意味着<strong>您已成功安装</strong>了“篡改猴”扩展。
+                        </p>
+                        <img src="img/tip.png" alt="提示框">
+                    </li>
+                    <li>
+                        <p>
+                            接下来，您需要开启“<strong>开发人员模式</strong>”，以允许扩展运行外部脚本。单击浏览器右上角菜单符号，打开菜单，单击“<strong>扩展</strong>”菜单项。
+                        </p>
+                        <img src="img/browser-menu.png" alt="菜单">
+                    </li>
+                    <li>
+                        <p>
+                            在弹出的二级菜单中选择“<strong>管理扩展</strong>”菜单项。
+                        </p>
+                        <img src="img/ext-menu.png" alt="管理扩展">
+                    </li>
+                    <li>
+                        <p>
+                            在新弹出的窗口中，找到左下角的“<strong>开发人员模式</strong>”开关并开启。
+                        </p>
+                        <img src="img/developer-mode.png" alt="“开发人员模式”">
+                    </li>
+                </ol>
+                <h3>
+                    添加用户脚本
+                </h3>
+                <p>
+                    接下来，您只需将<strong>“去你大爷的升学 e 网通”刷课脚本</strong>本体添加至篡改猴。
+                </p>
+                <ol>
+                    <li>
+                        <a href="../userscripts/ryan/main.user.js">单击此处</a>，在弹出的新窗口中单击“<strong>安装</strong>”按钮。
+                    </li>
+                    <img src="img/install-script.png" alt="安装脚本">
+                </ol>
+                <h3>
+                    小结
+                </h3>
+                <p>
+                    至此，您成功安装了脚本。接下来，您将<strong>学习该脚本的使用方法</strong>。
+                </p>
+                <hr>
+            </section>
+
+            <section id="usage">
+                <h2>使用</h2>
+                <h3>打开一节课</h3>
+                <ol>
+                    <li>
+                        <p>
+                            <a href="https://teacher.ewt360.com/ewtbend/bend/index/index.html">单击此处</a>，打开其中任意一个课程视频。
+                        </p>
+                        <img src="img/class-video.png" alt="课程视频">
+                    </li>
+                    <li>
+                        <p>
+                            按下 Ctrl + Shift + I 组合键。您应看到浏览器弹出了<strong>开发人员工具</strong>，默认处于“元素”选项卡。
+                        </p>
+                        <img src="img/devtools.png" alt="开发人员工具">
+                    </li>
+                    <li>
+                        <p>
+                            单击“<strong>控制台</strong>”选项卡。
+                        </p>
+                        <img src="img/devtools-console-button.png" alt="控制台按钮">
+                    </li>
+                    <li>
+                        <p>
+                            若您能够看到<strong>紫色背景、白色粗体大字的日志</strong>，证明脚本运行正常。接下来，您可以干些自己的事，静等课程刷完。
+                        </p>
+                        <img src="img/log.png" alt="日志">
+                    </li>
+                </ol>
+                <h3>
+                    小结
+                </h3>
+                <p>
+                    现在起，您可以愉快地刷课了。
+                </p>
+                <p>
+                    （小技巧：您可以以“科目”为列表而非以“日”为列表，这样可最大限度地延长无人值守时间。）
+                </p>
+                <hr>
+            </section>
+
+            <section id="uninstall">
+                <h2>卸载</h2>
+                <ol>
+                    <li>
+                        <p>
+                            单击浏览器右上角菜单符号，打开菜单，单击“<strong>扩展</strong>”菜单项。
+                        </p>
+                        <img src="img/browser-menu.png" alt="菜单">
+                    </li>
+                    <li>
+                        <p>
+                            在弹出的二级菜单中选择“<strong>管理扩展</strong>”菜单项。
+                        </p>
+                        <img src="img/ext-menu.png" alt="">
+                    </li>
+                    <li>
+                        <p>
+                            在新弹出的窗口中，找到“<strong>篡改猴</strong>”扩展，单击“<strong>删除</strong>”选项，在弹出的对话框中单击“删除”。
+                        </p>
+                        <img src="img/delete.png" alt="删除">
+                        <img src="img/delete-confirm.png" alt="确认删除">
+                    </li>
+                </ol>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

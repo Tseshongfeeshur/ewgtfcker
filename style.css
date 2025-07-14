@@ -1,0 +1,71 @@
+:root {
+    color-scheme: light dark;
+    --bg: #f8fbff;
+    --text: #1a1a1a;
+    --accent: #4cbdff;
+    --accent-hover: #2e85c3;
+    --card-bg: rgba(229, 240, 255, 0.7);
+    --border: #ccc;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    background-size: 40px 40px;
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container {
+    max-width: 30em;
+    display: flex;
+    margin: 2rem;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 1em;
+    flex-direction: column;
+    align-items: center;
+}
+
+span.head {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+span.desc {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+a.button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent);
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+a.button:hover {
+    background-color: var(--accent-hover);
+}
+
+@media (max-width: 600px) {
+    span.head {
+        font-size: 2rem;
+    }
+
+    span.desc {
+        font-size: 1rem;
+    }
+}
