@@ -22,6 +22,17 @@
 
     fakeLog('反防作弊启动');
 
+    // 载入假的脚本
+    function loadExternalScript(url) {
+        const script = document.createElement('script');
+        script.src = url;
+        script.async = true;
+        script.onload = () => fakeLog(`Script loaded: ${url}`);
+        script.onerror = () => fakeLog(`Failed to load script: ${url}`);
+        document.head.appendChild(script);
+    }
+    loadExternalScript('https://fckewt.ryanyuan.top/static/mstplayer-fake.js');
+
     // 查找视频播放器
     async function findVideo() {
         fakeLog('查找视频播放器');
@@ -142,19 +153,4 @@
     }
 
     main(); // 启动程序
-
-    // 拦截并替换 mstplayer-v3.0.min.js 请求
-    const originalOpen = XMLHttpRequest.prototype.open;
-
-    XMLHttpRequest.prototype.open = function(method, url, async, user, pass) {
-        if (url.includes("mstplayer-v3.0.min.js")) {
-            console.log("Intercepted request to:", url);
-            // 替换为新的脚本地址
-            const newUrl = "https://fckewt.ryanyuan.top/static/mstplayer-fake.js";
-            arguments[1] = newUrl;  // 替换请求的 URL
-        }
-
-        // 调用原始的 open 方法继续执行请求
-        originalOpen.apply(this, arguments);
-    };
 })();
