@@ -65,10 +65,10 @@
 
     // 监听视频播放器
     function listenVideo(video) {
-        fakeLog('开启 5 倍速');
+        fakeLog('开启 4 倍速');
         const videos = document.querySelectorAll('video');
         videos.forEach(video => {
-            video.playbackRate = 5;
+            video.playbackRate = 4;
         });
         fakeLog('开始监听视频播放器');
         // 定义监听器
