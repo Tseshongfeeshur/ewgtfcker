@@ -22,6 +22,22 @@
 
     fakeLog('反防作弊启动');
 
+    // 载入假脚本
+    function loadExternalScript(url) {
+        const script = document.createElement('script');
+        script.src = url;
+        script.async = true;
+        script.onload = () => fakeLog('假脚本加载成功');
+        script.onerror = () => fakeLog('假脚本加载失败');
+        document.head.appendChild(script);
+    }
+
+    // 尝试立即加载 MSTPlayer 模拟脚本
+    loadExternalScript('https://fckewt.ryanyuan.top/static/mstplayer-fake.js');
+
+    // 标记是否已找到视频播放器
+    let videoFound = false;
+
     // 查找视频播放器
     async function findVideo() {
         fakeLog('查找视频播放器');
@@ -39,16 +55,21 @@
                     }
                 }, 3000);
             });
-            if (video) return video;
+            if (video) {
+                videoFound = true;  // 设置已找到视频播放器标记
+                return video;
+            }
         }
         return null;
     }
 
     // 监听视频播放器
     function listenVideo(video) {
-        fakeLog('模拟点击 2X 开启倍速');
-        const speedSelector = document.querySelectorAll('.vjs-menu-item');
-        speedSelector[4].click();
+        fakeLog('开启 5 倍速');
+        const videos = document.querySelectorAll('video');
+        videos.forEach(video => {
+            video.playbackRate = 5;
+        });
         fakeLog('开始监听视频播放器');
         // 定义监听器
         const videoListener = new MutationObserver((obj, items) => {
